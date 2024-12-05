@@ -571,7 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fobPrefab: {fileID: 7773247566509532078, guid: 1f306777574314ab09babe951b0544eb, type: 3}
   spawnInitialDelay: 0.52
-  spawnDelay: 0.474
+  spawnDelay: 0.948
   initialSpeed: 1
   fobCount: 20
   horizontalSpread: 1
