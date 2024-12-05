@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlaySound : MonoBehaviour, IPointerClickHandler
 {
@@ -32,8 +33,18 @@ public class PlaySound : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("OnPointerClick");
+        PlayTheSoundAndDestroy();
+    }
 
-        // if the distance between the object and the camera is less than 1.5
+    public void OnHover(HoverEnterEventArgs args)
+    {
+        Debug.Log("OnHover");
+        PlayTheSoundAndDestroy();
+    }
+
+    public void PlayTheSoundAndDestroy()
+    {
+         // if the distance between the object and the camera is less than 1.5
         if (Vector3.Distance(transform.position, Camera.main.transform.position) < 1.5f)
         {
             audioSource.PlayOneShot(clip);
