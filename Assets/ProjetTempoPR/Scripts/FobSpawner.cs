@@ -1,8 +1,9 @@
+using System.Linq;
 using UnityEngine;
 
 public class FobSpawner : MonoBehaviour
 {
-    public GameObject fobPrefab;
+    public GameObject[] fobPrefabs;
     public float spawnInitialDelay = 2f;
     public float spawnDelay = 2f; // fobs every 2 second
     public float initialSpeed = 1f;
@@ -25,7 +26,7 @@ public class FobSpawner : MonoBehaviour
             Vector3 position = transform.position + new Vector3(0, 0, distance);
 
             // Instantiate a new Fob at the position of the spawner
-            GameObject fob = Instantiate(fobPrefab, position, Quaternion.identity);
+            GameObject fob = Instantiate(fobPrefabs[Random.Range(0, fobPrefabs.Count())], position, Quaternion.identity);
 
             // Look at the spawner
             fob.transform.LookAt(transform);
